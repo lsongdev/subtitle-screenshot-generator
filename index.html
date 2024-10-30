@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Liu Song’s Pages</title>
+  <title>Subtitle Screenshot Generator</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="description" content="homepage, blog, music and etc.">
@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Liu Song’s Web">
+  <meta name="apple-mobile-web-app-title" content="Subtitle Screenshot Generator">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@lsongdev">
@@ -27,7 +27,7 @@
     <header class="header">
       <a href="/" class="heading">
         <img src="https://lsong.org/icon.svg" alt="logo" class="logo" width="24">
-        <h1 prefix="Lsong’s " class="title">Pages</h1>
+        <h1 class="title">Subtitle Screenshot Generator</h1>
       </a>
       <nav class="nav nav-bar">
         <a href="//lsong.org">home</a>
@@ -46,22 +46,69 @@
           Hi, I'm Liu Song, a full-stack developer with a passion for open-source software.
           I have experience in web and mobile development, as well as a background in embedded systems and network
           protocols.
-          I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a href="//lsong.org/apps.html">applications</a> in my spare time.
+          I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a
+            href="//lsong.org/apps.html">applications</a> in my spare time.
           Proficient in Node.js, Golang, and server operations, I'm always eager to learn more and contribute to the
           community.
-          Check out my GitHub <a href="https://github.com/lsongdev">@lsongdev</a> for some of my projects and feel free to connect
+          Check out my GitHub <a href="https://github.com/lsongdev">@lsongdev</a> for some of my projects and feel free
+          to connect
           with me to discuss ideas.
-          When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a href="//lsong.org/games">games</a>.
+          When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a
+            href="//lsong.org/games">games</a>.
         </p>
       </section>
 
-      <section id="app"></section>
+      <h2>Subtitle Screenshot Generator</h2>
+      <div id="app" class="grid">
+        <form class="col-6 col-sm-12">
+          <div class="form-field">
+            <select id="image-select">
+              <option value="https://p4.itc.cn/images01/20230629/ff5fe7a0eabd455c8da1b6a6652ff5f4.jpeg">罗翔</option>
+              <option value="https://disksing.com/fake-screenshot/heros/郭德纲.jpg">郭德纲</option>
+              <option value="https://disksing.com/fake-screenshot/heros/刘能.jpg">刘能</option>
+              <option value="https://disksing.com/fake-screenshot/heros/鲁迅.jpg">鲁迅</option>
+              <option value="https://disksing.com/fake-screenshot/heros/罗永浩.jpg">罗永浩</option>
+              <option value="https://disksing.com/fake-screenshot/heros/马斯克.jpg">马斯克</option>
+              <option value="https://stcn-main.oss-cn-shenzhen.aliyuncs.com/upload/wechat/20230422/YRdSz9epGViakEvU2DUGrrfkrJ3B0QQ1V4vsmYc88BwIrOUJs69FrMnh0zNMoibSXQn64F24LP2Q9sptjeRu5gCw.png">马云</option>
+              <option value="https://disksing.com/fake-screenshot/heros/莫言.jpg">莫言</option>
+              <option value="https://oss.cyzone.cn/2020/1006/756b2a6f1c1831190e5cc1d520e062d0.jpg">乔布斯</option>
+              <option value="https://disksing.com/fake-screenshot/heros/杨澜.jpg">杨澜</option>
+              <option value="https://disksing.com/fake-screenshot/heros/于丹.jpg">于丹</option>
+            </select>
+            <input type="file" id="image-upload">
+          </div>
+
+          <div class="form-field">
+            <textarea id="text-input" rows="8"></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="fontsize-slider">字号</label>
+            <input type="range" id="fontsize-slider" min="10" max="50" value="20">
+          </div>
+
+          <div class="form-field">
+            <label for="line-height-slider">字幕行高</label>
+            <input type="range" id="line-height-slider" min="1.0" max="5.0" value="3" step="0.01">
+          </div>
+
+          <div class="form-field">
+            <input type="checkbox" id="watermark-checkbox">
+            <label for="watermark-checkbox">去水印</label>
+          </div>
+
+        </form>
+
+        <div id="result" class="col-6 col-sm-12">
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
 
       <hr />
       <section id="subscribe" class="subscribe">
         <h2>Subscribe</h2>
         <p>Join our occasional newsletter for product launches, availability, job openings, and news:</p>
-        <form action="https://formspree.io/hi@lsong.org" method="post" class="input-group width-full" >
+        <form action="https://formspree.io/hi@lsong.org" method="post" class="input-group width-full">
           <input class="input" type="email" id="email" name="email" required placeholder="email address">
           <button class="button" type="submit">Submit</button>
         </form>

@@ -1,1 +1,13 @@
 @import url(https://lsong.org/css/stylesheet.css);
+@import url(https://lsong.org/stylesheets/grid.css);
+@import url(https://lsong.org/stylesheets/form.css);
+
+#canvas {
+  border: 1px solid #ccc;
+}
+
+textarea {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
