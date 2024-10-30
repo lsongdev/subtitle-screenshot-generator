@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   canvas.width = canvasWidth;
   let image = new Image();
+  image.crossOrigin = "anonymous";
   image.onload = renderImage;
 
   imageSelect.addEventListener('change', () => image.src = imageSelect.value);
